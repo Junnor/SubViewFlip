@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gqX-ht-liR">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="HAG-Ek-0vA">
+            <objects>
+                <navigationController storyboardIdentifier="TransitionNavc" id="gqX-ht-liR" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KNQ-iE-tfR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ddj-de-QFo" kind="relationship" relationship="rootViewController" id="OaE-j1-kKq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0NP-js-JV4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="999" y="1105"/>
+        </scene>
+        <!--Transition-->
+        <scene sceneID="tB3-kt-Mgh">
+            <objects>
+                <viewController storyboardIdentifier="TransitionViewController" id="ddj-de-QFo" customClass="ViewController" customModule="SubViewFlip" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hwm-7s-atp"/>
+                        <viewControllerLayoutGuide type="bottom" id="vSW-p6-6TD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gsC-nL-nPi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AEA-tF-7ot">
+                                <rect key="frame" x="123" y="164" width="128" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="     TRANSITION     ">
+                                    <color key="titleColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="transitionAction:" destination="ddj-de-QFo" eventType="touchUpInside" id="PVh-LY-fue"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UK0-Mj-5P1" userLabel="Yellow View" customClass="CornerShadowView" customModule="SubViewFlip" customModuleProvider="target">
+                                <rect key="frame" x="37.5" y="367" width="300" height="200"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.14370152480000001" green="0.4016161681" blue="0.46712404819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.99215686270000003" green="0.82745098039999998" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="iDd-c5-8lW" appends="YES" id="poc-9r-VDb"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aRd-7s-e7x" userLabel="Red View" customClass="CornerShadowView" customModule="SubViewFlip" customModuleProvider="target">
+                                <rect key="frame" x="37.5" y="367" width="300" height="200"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="aRd-7s-e7x" secondAttribute="height" multiplier="3:2" id="taz-8s-SCu"/>
+                                    <constraint firstAttribute="height" constant="200" id="uDM-zA-gOX"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.14370152480000001" green="0.4016161681" blue="0.46712404819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="1" green="0.56470588239999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Mp3-Yr-lUi" appends="YES" id="umQ-9Y-rOu"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.28379637810000002" green="0.74667054929999999" blue="0.74702569799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="UK0-Mj-5P1" firstAttribute="bottom" secondItem="aRd-7s-e7x" secondAttribute="bottom" id="HkX-fw-ClS"/>
+                            <constraint firstItem="UK0-Mj-5P1" firstAttribute="leading" secondItem="aRd-7s-e7x" secondAttribute="leading" id="NtS-sz-mXM"/>
+                            <constraint firstItem="AEA-tF-7ot" firstAttribute="centerX" secondItem="gsC-nL-nPi" secondAttribute="centerX" id="Upg-1N-POh"/>
+                            <constraint firstItem="AEA-tF-7ot" firstAttribute="top" secondItem="hwm-7s-atp" secondAttribute="bottom" constant="100" id="YaU-gA-CRm"/>
+                            <constraint firstItem="UK0-Mj-5P1" firstAttribute="height" secondItem="aRd-7s-e7x" secondAttribute="height" id="cSa-uN-dwE"/>
+                            <constraint firstItem="vSW-p6-6TD" firstAttribute="top" secondItem="aRd-7s-e7x" secondAttribute="bottom" constant="100" id="eVO-FV-yj0"/>
+                            <constraint firstItem="aRd-7s-e7x" firstAttribute="centerX" secondItem="gsC-nL-nPi" secondAttribute="centerX" id="lKS-aZ-TA9"/>
+                            <constraint firstItem="UK0-Mj-5P1" firstAttribute="trailing" secondItem="aRd-7s-e7x" secondAttribute="trailing" id="n7X-zq-6DE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Transition" id="3XH-as-lMp"/>
+                    <connections>
+                        <outlet property="redView" destination="aRd-7s-e7x" id="Egm-vE-fPT"/>
+                        <outlet property="yellowView" destination="UK0-Mj-5P1" id="WFF-ti-mft"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JGM-xD-Ztm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Mp3-Yr-lUi">
+                    <connections>
+                        <action selector="tapForRedView:" destination="ddj-de-QFo" id="DE0-Un-96a"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="iDd-c5-8lW">
+                    <connections>
+                        <action selector="tapForYellowView:" destination="ddj-de-QFo" id="ugo-Gi-fei"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1781.5999999999999" y="1103.2983508245877"/>
+        </scene>
+    </scenes>
+</document>
